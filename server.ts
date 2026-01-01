@@ -403,7 +403,6 @@ async function startServer(): Promise<void> {
   });
 
   app.get('/api/github-projects', (_req, res) => {
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []).sort(
     const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS).sort(
       (a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime(),
     );
@@ -431,7 +430,6 @@ async function startServer(): Promise<void> {
       return;
     }
 
-    const existing = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
     const existing = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const duplicate = existing.find(
       (item) => item.htmlUrl.toLowerCase() === htmlUrl.toLowerCase(),
@@ -481,7 +479,6 @@ async function startServer(): Promise<void> {
   app.patch('/api/github-projects/:id', (req, res) => {
     const {id} = req.params;
     const body = req.body ?? {};
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
     const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const index = projects.findIndex((item) => item.id === id);
     if (index === -1) {
@@ -512,7 +509,6 @@ async function startServer(): Promise<void> {
 
   app.post('/api/github-projects/:id/sync', async (req, res) => {
     const {id} = req.params;
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
     const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const index = projects.findIndex((item) => item.id === id);
     if (index === -1) {
@@ -551,7 +547,6 @@ async function startServer(): Promise<void> {
 
   app.delete('/api/github-projects/:id', (req, res) => {
     const {id} = req.params;
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
     const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const filtered = projects.filter((item) => item.id !== id);
     if (filtered.length === projects.length) {

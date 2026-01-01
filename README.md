@@ -2,7 +2,6 @@
 
 A dark-monochrome and electric-cyan full-stack web developer portfolio built with **React**, **TypeScript**, **Three.js**, **Tailwind CSS**, and **Express**.
 
-Designed around an interactive WebGL hero backdrop, real-time 3D device mockups (`#project-1`, `#project-2`, `#project-3`), live GitHub repository importing and stat syncing, inline profile editing, and a persistent contact inbox.
 Designed around an interactive WebGL hero backdrop, real-time 3D device mockups (`#project-1` — `#project-4`), live GitHub repository importing and stat syncing, inline profile editing, and a persistent contact inbox.
 
 ---
@@ -68,8 +67,6 @@ GitHub Pages only serves static files (it does not run a Node.js server), so thi
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/ramanivenish/<your-repo-name>.git
-   cd <your-repo-name>
    git clone https://github.com/venishRamani/Portfolio.git
    cd Portfolio
    ```
@@ -142,14 +139,12 @@ All API routes are served by `server.ts` and persist data locally in `data/*.jso
     ├── index.css                    # Tailwind CSS v4 + chamfer & vertical nav utilities
     ├── main.tsx
     ├── assets/images/               # Local project & portrait assets
-    ├── data/featuredProjects.ts     # #project-1, #project-2, #project-3 definitions
     ├── data/featuredProjects.ts     # #project-1 — #project-4 definitions
     ├── types/portfolio.ts           # Shared TypeScript interfaces
     └── components/
         ├── Navbar.tsx               # Fixed vertical sidebar + mobile drawer
         ├── IntroHero.tsx            # #intro hero + focus switcher
         ├── DecoderText.tsx          # Glyph scramble text animation
-        ├── ProjectShowcase.tsx      # #project-1 / #project-2 / #project-3 layout
         ├── ProjectShowcase.tsx      # #project-1 — #project-4 showcase layout
         ├── ProjectCaseStudyModal.tsx
         ├── GitHubShowcase.tsx       # GitHub repo import, sync, and notes
@@ -172,5 +167,4 @@ All API routes are served by `server.ts` and persist data locally in `data/*.jso
 
 - **Developer:** Venish Ramani
 - **Email:** [ramanivenish2004@gmail.com](mailto:ramanivenish2004@gmail.com)
-- **GitHub:** [github.com/ramanivenish](https://github.com/ramanivenish)
 - **GitHub:** [github.com/venishRamani](https://github.com/venishRamani)
