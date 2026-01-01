@@ -30,6 +30,76 @@ const DEFAULT_PROFILE: ProfileData = {
   heroImageAlt: 'Web developer workspace with laptop and notebooks',
 };
 
+const DEFAULT_GITHUB_PROJECTS: GitHubProject[] = [
+  {
+    id: 'gh-campindia',
+    owner: 'venishRamani',
+    repo: 'CampIndia',
+    fullName: 'venishRamani/CampIndia',
+    htmlUrl: 'https://github.com/venishRamani/CampIndia',
+    homepage: 'https://venishramani.github.io/CampIndia/',
+    description:
+      'Responsive camping and outdoor travel website showcasing destinations across India with About Us & Gallery sections and Firebase configuration.',
+    language: 'CSS',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'firebase'],
+    updatedAt: '2026-11-19T10:39:11Z',
+    customHighlight: 'Live on GitHub Pages · Multi-page camping showcase',
+    addedAt: '2026-11-19T10:39:11Z',
+  },
+  {
+    id: 'gh-tourism-website',
+    owner: 'venishRamani',
+    repo: 'Tourism-website',
+    fullName: 'venishRamani/Tourism-website',
+    htmlUrl: 'https://github.com/venishRamani/Tourism-website',
+    homepage: 'https://venishramani.github.io/Tourism-website/',
+    description:
+      'Interactive tourism web portal featuring destination image carousels, responsive layouts, and mobile icon assets.',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'tourism'],
+    updatedAt: '2026-11-19T07:59:05Z',
+    customHighlight: 'Live on GitHub Pages · Responsive carousel & travel UI',
+    addedAt: '2026-11-19T07:59:05Z',
+  },
+  {
+    id: 'gh-apartment-management',
+    owner: 'venishRamani',
+    repo: 'Apartment-management',
+    fullName: 'venishRamani/Apartment-management',
+    htmlUrl: 'https://github.com/venishRamani/Apartment-management',
+    homepage: 'https://venishramani.github.io/Apartment-management/',
+    description:
+      'Apartment & Society Management System combining a custom web portal and loader animation with a relational SQL schema (sms.sql).',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'sql'],
+    updatedAt: '2026-11-17T14:51:22Z',
+    customHighlight: 'Live on GitHub Pages · Includes sms.sql relational schema',
+    addedAt: '2026-11-17T14:51:22Z',
+  },
+  {
+    id: 'gh-frontend-projects',
+    owner: 'venishRamani',
+    repo: 'Frontend-Projects',
+    fullName: 'venishRamani/Frontend-Projects',
+    htmlUrl: 'https://github.com/venishRamani/Frontend-Projects',
+    description:
+      'Collection of 11 interactive frontend builds: Todo App, Contact Manager, Password Generator, Swiper Cards, Animated Profile Card, and Sticky Navbar.',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'ui-components'],
+    updatedAt: '2026-11-19T07:03:21Z',
+    customHighlight: '11 standalone interactive JS/CSS projects',
+    addedAt: '2026-11-19T07:03:21Z',
+  },
+];
+
 function ensureDir(): void {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, {recursive: true});
@@ -333,7 +403,7 @@ async function startServer(): Promise<void> {
   });
 
   app.get('/api/github-projects', (_req, res) => {
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []).sort(
+    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS).sort(
       (a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime(),
     );
     res.json({projects});
@@ -360,7 +430,7 @@ async function startServer(): Promise<void> {
       return;
     }
 
-    const existing = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
+    const existing = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const duplicate = existing.find(
       (item) => item.htmlUrl.toLowerCase() === htmlUrl.toLowerCase(),
     );
@@ -409,7 +479,7 @@ async function startServer(): Promise<void> {
   app.patch('/api/github-projects/:id', (req, res) => {
     const {id} = req.params;
     const body = req.body ?? {};
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
+    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const index = projects.findIndex((item) => item.id === id);
     if (index === -1) {
       res.status(404).json({error: 'GitHub project not found.'});
@@ -439,7 +509,7 @@ async function startServer(): Promise<void> {
 
   app.post('/api/github-projects/:id/sync', async (req, res) => {
     const {id} = req.params;
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
+    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const index = projects.findIndex((item) => item.id === id);
     if (index === -1) {
       res.status(404).json({error: 'GitHub project not found.'});
@@ -477,7 +547,7 @@ async function startServer(): Promise<void> {
 
   app.delete('/api/github-projects/:id', (req, res) => {
     const {id} = req.params;
-    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, []);
+    const projects = readJsonObject<GitHubProject[]>(GITHUB_PROJECTS_FILE, DEFAULT_GITHUB_PROJECTS);
     const filtered = projects.filter((item) => item.id !== id);
     if (filtered.length === projects.length) {
       res.status(404).json({error: 'GitHub project not found.'});

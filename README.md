@@ -2,7 +2,7 @@
 
 A dark-monochrome and electric-cyan full-stack web developer portfolio built with **React**, **TypeScript**, **Three.js**, **Tailwind CSS**, and **Express**.
 
-Designed around an interactive WebGL hero backdrop, real-time 3D device mockups (`#project-1`, `#project-2`, `#project-3`), live GitHub repository importing and stat syncing, inline profile editing, and a persistent contact inbox.
+Designed around an interactive WebGL hero backdrop, real-time 3D device mockups (`#project-1` — `#project-4`), live GitHub repository importing and stat syncing, inline profile editing, and a persistent contact inbox.
 
 ---
 
@@ -12,7 +12,7 @@ Designed around an interactive WebGL hero backdrop, real-time 3D device mockups 
   - Real-time `DisplacementSphere` WebGL shader backdrop with 3D simplex noise vertex/normal displacement, studio `RoomEnvironment` reflections, cursor parallax, and automatic hardware/software-GL adaptive rendering.
   - `DecoderText` glyph-scramble typography reveal (respects `prefers-reduced-motion`).
   - Clickable focus switcher (`Full-Stack`, `React & Node`, `APIs & UI`).
-- **3D Project Showcase (`#project-1` — `#project-3`)**
+- **3D Project Showcase (`#project-1` — `#project-4`)**
   - Alternating split layouts with interactive Three.js 3D **Laptop** and **Dual-Phone** device assemblies (`DeviceCanvas3D`) textured with project visuals and pointer-driven damped tilt.
   - Chamfered `#00E5FF` action buttons opening a detailed case-study modal with architecture notes and engineering highlights.
 - **Live GitHub Project Showcase (`#github`)**
@@ -67,8 +67,8 @@ GitHub Pages only serves static files (it does not run a Node.js server), so thi
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/ramanivenish/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/venishRamani/Portfolio.git
+   cd Portfolio
    ```
 
 2. **Install dependencies**
@@ -139,13 +139,13 @@ All API routes are served by `server.ts` and persist data locally in `data/*.jso
     ├── index.css                    # Tailwind CSS v4 + chamfer & vertical nav utilities
     ├── main.tsx
     ├── assets/images/               # Local project & portrait assets
-    ├── data/featuredProjects.ts     # #project-1, #project-2, #project-3 definitions
+    ├── data/featuredProjects.ts     # #project-1 — #project-4 definitions
     ├── types/portfolio.ts           # Shared TypeScript interfaces
     └── components/
         ├── Navbar.tsx               # Fixed vertical sidebar + mobile drawer
         ├── IntroHero.tsx            # #intro hero + focus switcher
         ├── DecoderText.tsx          # Glyph scramble text animation
-        ├── ProjectShowcase.tsx      # #project-1 / #project-2 / #project-3 layout
+        ├── ProjectShowcase.tsx      # #project-1 — #project-4 showcase layout
         ├── ProjectCaseStudyModal.tsx
         ├── GitHubShowcase.tsx       # GitHub repo import, sync, and notes
         ├── AddGitHubProjectModal.tsx
@@ -167,4 +167,4 @@ All API routes are served by `server.ts` and persist data locally in `data/*.jso
 
 - **Developer:** Venish Ramani
 - **Email:** [ramanivenish2004@gmail.com](mailto:ramanivenish2004@gmail.com)
-- **GitHub:** [github.com/ramanivenish](https://github.com/ramanivenish)
+- **GitHub:** [github.com/venishRamani](https://github.com/venishRamani)
