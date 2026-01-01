@@ -13,6 +13,7 @@ Designed around an interactive WebGL hero backdrop, real-time 3D device mockups 
   - Real-time `DisplacementSphere` WebGL shader backdrop with 3D simplex noise vertex/normal displacement, studio `RoomEnvironment` reflections, cursor parallax, and automatic hardware/software-GL adaptive rendering.
   - `DecoderText` glyph-scramble typography reveal (respects `prefers-reduced-motion`).
   - Clickable focus switcher (`Full-Stack`, `React & Node`, `APIs & UI`).
+- **3D Project Showcase (`#project-1` — `#project-4`)**
   - Alternating split layouts with interactive Three.js 3D **Laptop** and **Dual-Phone** device assemblies (`DeviceCanvas3D`) textured with project visuals and pointer-driven damped tilt.
   - Chamfered `#00E5FF` action buttons opening a detailed case-study modal with architecture notes and engineering highlights.
 - **Live GitHub Project Showcase (`#github`)**
