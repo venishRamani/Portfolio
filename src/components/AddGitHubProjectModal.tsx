@@ -326,7 +326,6 @@ export function AddGitHubProjectModal({
                     type="text"
                     value={usernameInput}
                     onChange={(e) => setUsernameInput(e.target.value)}
-                    placeholder="e.g. ramanivenish"
   
                     className="min-h-[44px] flex-1 rounded-lg border border-[#23232A] bg-[#0A0A0B] px-3.5 py-2.5 font-mono text-xs text-[#F4F4F5] placeholder:text-[#52525B] focus:border-white focus:outline-none"
                   />

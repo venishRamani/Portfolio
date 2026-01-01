@@ -63,14 +63,35 @@ export function ProjectCaseStudyModal({
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 sm:p-8">
-          <div className="aspect-[16/9] w-full overflow-hidden border border-white/10 bg-[#111111]">
-            <ResilientImage
-              src={project.screenTexture}
-              alt={project.title}
-              fallbackTitle={project.title}
-              className="h-full w-full object-cover"
-            />
-          </div>
+          {project.deviceVariant === 'phones' && project.secondaryScreenTexture ? (
+            <div className="grid grid-cols-2 gap-4 border border-white/10 bg-[#111111] p-4 sm:p-6">
+              <div className="mx-auto aspect-[9/16] max-h-[380px] w-full max-w-[220px] overflow-hidden border border-white/10 bg-[#0A0A0B]">
+                <ResilientImage
+                  src={project.screenTexture}
+                  alt={`${project.title} primary screen`}
+                  fallbackTitle={project.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mx-auto aspect-[9/16] max-h-[380px] w-full max-w-[220px] overflow-hidden border border-white/10 bg-[#0A0A0B]">
+                <ResilientImage
+                  src={project.secondaryScreenTexture}
+                  alt={`${project.title} secondary screen`}
+                  fallbackTitle={project.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="aspect-[16/9] w-full overflow-hidden border border-white/10 bg-[#111111]">
+              <ResilientImage
+                src={project.screenTexture}
+                alt={project.title}
+                fallbackTitle={project.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
 
           <h2
             id="case-study-title"
