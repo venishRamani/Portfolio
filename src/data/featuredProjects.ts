@@ -1,7 +1,7 @@
 import {resolveAssetUrl} from '../lib/portfolioApi';
 
 export interface FeaturedProject {
-  id: 'project-1' | 'project-2' | 'project-3';
+  id: 'project-1' | 'project-2' | 'project-3' | 'project-4';
   index: string;
   title: string;
   subtitle: string;
@@ -22,65 +22,90 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: 'project-1',
     index: '01',
-    title: 'Designing the CampIndia Website',
-    subtitle: 'Kinetix Cloud Console · React + Node.js API Platform',
+    title: 'CampIndia — Outdoor & Camping Booking Platform',
+    subtitle: 'CampIndia · Travel Showcase & Destination Web App',
     description:
-       'your gateway to exploring the beauty and diversity of India camping destinations!',
+      'A responsive travel and camping web experience showcasing curated campsites across India with interactive gallery views, destination details, and Firebase-ready hosting.',
     architectureSummary:
-      'Foster a community of outdoor enthusiasts who love exploring India's wilderness.',
+      'Built with structured HTML, modular CSS layouts, and interactive JavaScript components, organized into dedicated About Us and Gallery sections with Firebase project configuration.',
     highlights: [
-      'Camping Spot Directory: A curated list of camping sites across India, complete with location details, amenities, and user reviews.',
-      'Travel Guides: Step-by-step guides for planning your camping trips, including packing lists, safety tips, and must-visit attractions.',
-      'Community Contributions: Open to contributions from fellow campers! Share your experiences, photos, and tips to help others.',
+      'Responsive multi-section destination showcase with custom About Us and Gallery flows',
+      'Clean CSS grid & responsive styling tuned for both desktop and mobile travelers',
+      'Deployed live on GitHub Pages with Firebase project configuration (.firebaserc)',
     ],
-    stack: ['HTMl', 'TypeScript', 'CSS', 'JAVASCRIPT'],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     deviceVariant: 'laptop',
     align: 'left',
     screenTexture: resolveAssetUrl('src/assets/images/work_fintech_platform_1795082546240.jpg'),
-    repoUrl: 'https://github.com/ramanivenish',
+    repoUrl: 'https://github.com/venishRamani/CampIndia',
+    liveUrl: 'https://venishramani.github.io/CampIndia/',
     year: '2026',
   },
   {
     id: 'project-2',
     index: '02',
-    title: 'Real-time mobile web payments & ledger',
-    subtitle: 'PulsePay Web · Responsive Web App & Webhook Engine',
+    title: 'Tourism Website — Interactive Travel Portal',
+    subtitle: 'Tourism-website · Mobile-Ready Travel & Carousel UI',
     description:
-      'A mobile-first financial web application featuring instant ledger reconciliation, idempotent webhook processing, and optimistic UI updates across devices.',
+      'An interactive tourism web application featuring full-bleed destination imagery, smooth image carousels, and mobile web app icons designed for fast cross-device browsing.',
     architectureSummary:
-      'Engineered an idempotent Node.js payment webhook pipeline paired with responsive mobile web views, offline queue resilience, and deterministic state reconciliation.',
+      'Engineered with semantic HTML, custom CSS transitions, and JavaScript carousel controls paired with progressive web icon assets for mobile home-screen compatibility.',
     highlights: [
-      'Mobile-first React interface tuned for 60fps scroll performance and zero layout shift',
-      'Idempotent REST API design preventing duplicate transactions under flaky networks',
-      'Automated integration test suite covering auth tokens, pagination, and CSV exports',
+      'Interactive hero carousel highlighting top travel destinations',
+      'Responsive mobile-first layout with custom PWA/app icon manifest assets',
+      'Published live via GitHub Pages for instant browser previews',
     ],
-    stack: ['React', 'Node.js', 'REST APIs', 'Webhooks', 'SQLite / Postgres'],
+    stack: ['HTML', 'CSS', 'JavaScript'],
     deviceVariant: 'phones',
     align: 'right',
     screenTexture: resolveAssetUrl('src/assets/images/work_mobility_os_1795082546266.jpg'),
     secondaryScreenTexture: resolveAssetUrl('src/assets/images/work_audio_hardware_1795082564583.jpg'),
-    repoUrl: 'https://github.com/ramanivenish',
-    year: '2025',
+    repoUrl: 'https://github.com/venishRamani/Tourism-website',
+    liveUrl: 'https://venishramani.github.io/Tourism-website/',
+    year: '2026',
   },
   {
     id: 'project-3',
     index: '03',
-    title: 'A composable developer portfolio & CMS',
-    subtitle: 'Monolith Studio · Headless Content & GitHub Sync Engine',
+    title: 'Apartment Management — Society Portal & SQL Schema',
+    subtitle: 'Apartment-management · Property UI & Relational Database',
     description:
-      'Created a fast, self-editable web platform with live GitHub repository metadata syncing, inline profile authoring, and persistent JSON/API storage.',
+      'A residential society and apartment management web system combining a custom animated loader interface with a structured SQL database schema (sms.sql) for residents and units.',
     architectureSummary:
-      'Combines an Express persistence layer and GitHub REST v3 proxy with a dark monochrome WebGL frontend featuring zero-dependency interactive controls.',
+      'Pairs a lightweight HTML/CSS web portal and custom preloader animation (loader.css) with a relational SQL schema (sms.sql) modeling society records, flats, and maintenance tracking.',
     highlights: [
-      'Live GitHub repository lookup by URL or handle with one-click star and fork sync',
-      'Self-editable developer profile and direct contact inbox persisted to backend storage',
-      'Accessible keyboard navigation, reduced-motion support, and Three.js hardware-adaptive rendering',
+      'Custom CSS loading animation and clean dashboard entry interface',
+      'Relational SQL database structure (sms.sql) for apartment and resident records',
+      'Live preview hosted on GitHub Pages with clear documentation',
     ],
-    stack: ['TypeScript', 'React', 'Three.js', 'Express', 'GitHub REST API'],
+    stack: ['HTML', 'CSS', 'SQL'],
     deviceVariant: 'laptop',
     align: 'left',
     screenTexture: resolveAssetUrl('src/assets/images/work_editorial_monograph_1795082546224.jpg'),
-    repoUrl: 'https://github.com/ramanivenish',
-    year: '2025',
+    repoUrl: 'https://github.com/venishRamani/Apartment-management',
+    liveUrl: 'https://venishramani.github.io/Apartment-management/',
+    year: '2024',
+  },
+  {
+    id: 'project-4',
+    index: '04',
+    title: 'Frontend Projects — Interactive Web UI Collection',
+    subtitle: 'Frontend-Projects · 11 Mini Web Apps & UI Components',
+    description:
+      'A curated collection of 11 interactive frontend builds including a Todo App, Contact Manager, Password Generator, Swiper Cards, Animated Search Bar, and Responsive Sticky Navbar.',
+    architectureSummary:
+      'Hands-on JavaScript, HTML, and CSS component library covering DOM state management, form validation, card sliders, animated profile cards, and responsive navigation patterns.',
+    highlights: [
+      'Practical utility apps: Todo App, Contact Manager App, and Password Generator System',
+      'Interactive UI patterns: Swiper Cards, Slideshow, Search Bar Animation, and 3D Social Icons',
+      'Clean responsive forms and sticky navbar patterns built with vanilla HTML/CSS/JS',
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    deviceVariant: 'phones',
+    align: 'right',
+    screenTexture: resolveAssetUrl('src/assets/images/work_apothecary_brand_1795082546073.jpg'),
+    secondaryScreenTexture: resolveAssetUrl('src/assets/images/work_fintech_platform_1795082546240.jpg'),
+    repoUrl: 'https://github.com/venishRamani/Frontend-Projects',
+    year: '2026',
   },
 ];
