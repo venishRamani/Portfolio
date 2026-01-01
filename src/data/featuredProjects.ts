@@ -36,7 +36,11 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     stack: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     deviceVariant: 'laptop',
     align: 'left',
+<<<<<<< HEAD
     screenTexture: resolveAssetUrl('src/assets/images/campindia_laptop_ui_1795096726444.jpg'),
+=======
+    screenTexture: resolveAssetUrl('src/assets/images/work_fintech_platform_1795082546240.jpg'),
+>>>>>>> c8a2a8590a60a6fff156e6f6093cebdad0c73790
     repoUrl: 'https://github.com/venishRamani/CampIndia',
     liveUrl: 'https://venishramani.github.io/CampIndia/',
     year: '2026',
@@ -58,8 +62,13 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     stack: ['HTML', 'CSS', 'JavaScript'],
     deviceVariant: 'phones',
     align: 'right',
+<<<<<<< HEAD
     screenTexture: resolveAssetUrl('src/assets/images/tourism_mobile_home_1795096707038.jpg'),
     secondaryScreenTexture: resolveAssetUrl('src/assets/images/tourism_mobile_gallery_1795096710029.jpg'),
+=======
+    screenTexture: resolveAssetUrl('src/assets/images/work_mobility_os_1795082546266.jpg'),
+    secondaryScreenTexture: resolveAssetUrl('src/assets/images/work_audio_hardware_1795082564583.jpg'),
+>>>>>>> c8a2a8590a60a6fff156e6f6093cebdad0c73790
     repoUrl: 'https://github.com/venishRamani/Tourism-website',
     liveUrl: 'https://venishramani.github.io/Tourism-website/',
     year: '2026',
@@ -81,7 +90,11 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     stack: ['HTML', 'CSS', 'SQL'],
     deviceVariant: 'laptop',
     align: 'left',
+<<<<<<< HEAD
     screenTexture: resolveAssetUrl('src/assets/images/apartment_laptop_ui_1795096710714.jpg'),
+=======
+    screenTexture: resolveAssetUrl('src/assets/images/work_editorial_monograph_1795082546224.jpg'),
+>>>>>>> c8a2a8590a60a6fff156e6f6093cebdad0c73790
     repoUrl: 'https://github.com/venishRamani/Apartment-management',
     liveUrl: 'https://venishramani.github.io/Apartment-management/',
     year: '2024',
@@ -103,8 +116,13 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     stack: ['HTML', 'CSS', 'JavaScript'],
     deviceVariant: 'phones',
     align: 'right',
+<<<<<<< HEAD
     screenTexture: resolveAssetUrl('src/assets/images/frontend_apps_mobile_1795096709775.jpg'),
     secondaryScreenTexture: resolveAssetUrl('src/assets/images/frontend_cards_mobile_1795096709598.jpg'),
+=======
+    screenTexture: resolveAssetUrl('src/assets/images/work_apothecary_brand_1795082546073.jpg'),
+    secondaryScreenTexture: resolveAssetUrl('src/assets/images/work_fintech_platform_1795082546240.jpg'),
+>>>>>>> c8a2a8590a60a6fff156e6f6093cebdad0c73790
     repoUrl: 'https://github.com/venishRamani/Frontend-Projects',
     year: '2026',
   },
