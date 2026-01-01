@@ -53,6 +53,7 @@ export function Navbar({
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    const ids = ['intro', 'project-1', 'project-2', 'project-3', 'project-4', 'github', 'about', 'contact'];
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
@@ -68,6 +69,7 @@ export function Navbar({
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target?.id) {
           const id = visible.target.id;
+          if (id === 'project-2' || id === 'project-3' || id === 'project-4') {
             setActiveId('project-1');
           } else {
             setActiveId(id);
@@ -142,6 +144,7 @@ export function Navbar({
 
         <div className="flex flex-col items-center gap-3">
           <a
+            href="https://github.com/venishRamani"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
