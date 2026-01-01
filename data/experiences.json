@@ -1,0 +1,52 @@
+[
+  {
+    "id": "exp-fullstack-1",
+    "role": "Full-Stack Web Developer",
+    "organization": "Northstar Web Studio",
+    "period": "2025 — Present",
+    "location": "Bengaluru",
+    "summary": "Built production React + TypeScript web applications backed by Node.js and Express REST APIs, including authentication flows, role-based dashboards, and database integrations.",
+    "outcome": "Shipped 6 full-stack web apps with 99+ Lighthouse scores",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "id": "exp-frontend-2",
+    "role": "Web Developer Intern",
+    "organization": "Verve Digital",
+    "period": "2024 — 2025",
+    "location": "Remote",
+    "summary": "Developed responsive client web portals, reusable React component libraries, and REST API endpoints for real-time form handling and analytics views.",
+    "outcome": "Cut page bundle size by 34% and unified UI components",
+    "stack": [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "REST APIs",
+      "CSS Grid"
+    ]
+  },
+  {
+    "id": "exp-projects-3",
+    "role": "Independent Full-Stack Builder",
+    "organization": "Personal Web Projects",
+    "period": "2023 — 2024",
+    "location": "India",
+    "summary": "Built end-to-end web tools—custom CMS dashboards, URL shorteners, and interactive portfolio apps—while mastering database modeling, API validation, and deployment.",
+    "outcome": "Maintained open-source React & Express starter templates",
+    "stack": [
+      "React",
+      "Express",
+      "SQLite",
+      "PostgreSQL",
+      "Git",
+      "Vite"
+    ]
+  }
+]

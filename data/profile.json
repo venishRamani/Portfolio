@@ -1,0 +1,10 @@
+{
+  "name": "Venish Ramani",
+  "role": "Full-Stack Web Developer",
+  "location": "Bengaluru, India",
+  "email": "ramanivenish2004@gmail.com",
+  "headline": "Building fast, clean web apps from API to interface.",
+  "bio": "I’m a web developer specializing in React, Node.js, and RESTful APIs. I focus on clean component architecture, accessible layouts, and reliable backend services.",
+  "heroImage": "/src/assets/images/hero_studio_portrait_1795082543886.jpg",
+  "heroImageAlt": "Web developer workspace with laptop and notebooks"
+}
