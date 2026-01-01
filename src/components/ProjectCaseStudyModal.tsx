@@ -111,6 +111,17 @@ export function ProjectCaseStudyModal({
 
           <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-3">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center gap-2 border border-[#00E5FF]/50 bg-[#111111] px-4 py-2 font-mono text-xs font-semibold text-[#00E5FF] transition-colors hover:border-[#00E5FF] hover:bg-[#00E5FF]/10"
+                >
+                  <span>Live Demo</span>
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+              )}
               {project.repoUrl && (
                 <a
                   href={project.repoUrl}

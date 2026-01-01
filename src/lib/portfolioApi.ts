@@ -33,6 +33,76 @@ export const DEFAULT_PROFILE: ProfileData = {
   heroImageAlt: 'Web developer workspace with laptop and notebooks',
 };
 
+export const DEFAULT_GITHUB_PROJECTS: GitHubProject[] = [
+  {
+    id: 'gh-campindia',
+    owner: 'venishRamani',
+    repo: 'CampIndia',
+    fullName: 'venishRamani/CampIndia',
+    htmlUrl: 'https://github.com/venishRamani/CampIndia',
+    homepage: 'https://venishramani.github.io/CampIndia/',
+    description:
+      'Responsive camping and outdoor travel website showcasing destinations across India with About Us & Gallery sections and Firebase configuration.',
+    language: 'CSS',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'firebase'],
+    updatedAt: '2026-11-19T10:39:11Z',
+    customHighlight: 'Live on GitHub Pages · Multi-page camping showcase',
+    addedAt: '2026-11-19T10:39:11Z',
+  },
+  {
+    id: 'gh-tourism-website',
+    owner: 'venishRamani',
+    repo: 'Tourism-website',
+    fullName: 'venishRamani/Tourism-website',
+    htmlUrl: 'https://github.com/venishRamani/Tourism-website',
+    homepage: 'https://venishramani.github.io/Tourism-website/',
+    description:
+      'Interactive tourism web portal featuring destination image carousels, responsive layouts, and mobile icon assets.',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'tourism'],
+    updatedAt: '2026-11-19T07:59:05Z',
+    customHighlight: 'Live on GitHub Pages · Responsive carousel & travel UI',
+    addedAt: '2026-11-19T07:59:05Z',
+  },
+  {
+    id: 'gh-apartment-management',
+    owner: 'venishRamani',
+    repo: 'Apartment-management',
+    fullName: 'venishRamani/Apartment-management',
+    htmlUrl: 'https://github.com/venishRamani/Apartment-management',
+    homepage: 'https://venishramani.github.io/Apartment-management/',
+    description:
+      'Apartment & Society Management System combining a custom web portal and loader animation with a relational SQL schema (sms.sql).',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'sql'],
+    updatedAt: '2026-11-17T14:51:22Z',
+    customHighlight: 'Live on GitHub Pages · Includes sms.sql relational schema',
+    addedAt: '2026-11-17T14:51:22Z',
+  },
+  {
+    id: 'gh-frontend-projects',
+    owner: 'venishRamani',
+    repo: 'Frontend-Projects',
+    fullName: 'venishRamani/Frontend-Projects',
+    htmlUrl: 'https://github.com/venishRamani/Frontend-Projects',
+    description:
+      'Collection of 11 interactive frontend builds: Todo App, Contact Manager, Password Generator, Swiper Cards, Animated Profile Card, and Sticky Navbar.',
+    language: 'HTML',
+    stars: 1,
+    forks: 0,
+    topics: ['html', 'css', 'javascript', 'ui-components'],
+    updatedAt: '2026-11-19T07:03:21Z',
+    customHighlight: '11 standalone interactive JS/CSS projects',
+    addedAt: '2026-11-19T07:03:21Z',
+  },
+];
+
 function readStorage<T>(key: string, fallback: T): T {
   try {
     const raw = window.localStorage.getItem(key);
@@ -229,7 +299,7 @@ export async function loadGitHubProjects(): Promise<GitHubProject[]> {
     writeStorage(GITHUB_KEY, api.data.projects);
     return api.data.projects;
   }
-  return readStorage<GitHubProject[]>(GITHUB_KEY, []).sort(
+  return readStorage<GitHubProject[]>(GITHUB_KEY, DEFAULT_GITHUB_PROJECTS).sort(
     (a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime(),
   );
 }
@@ -252,7 +322,7 @@ export async function addGitHubProject(
     throw new Error(api.error || 'Could not save repository.');
   }
 
-  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, []);
+  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, DEFAULT_GITHUB_PROJECTS);
   const duplicate = existing.find(
     (item) => item.htmlUrl.toLowerCase() === payload.htmlUrl.toLowerCase(),
   );
@@ -280,7 +350,7 @@ export async function syncGitHubProject(id: string): Promise<GitHubProject | nul
     return null;
   }
 
-  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, []);
+  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, DEFAULT_GITHUB_PROJECTS);
   const current = existing.find((item) => item.id === id);
   if (!current) {
     return null;
@@ -314,7 +384,7 @@ export async function updateGitHubProjectHighlight(
     return null;
   }
 
-  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, []);
+  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, DEFAULT_GITHUB_PROJECTS);
   const current = existing.find((item) => item.id === id);
   if (!current) {
     return null;
@@ -340,7 +410,7 @@ export async function deleteGitHubProject(id: string): Promise<boolean> {
   if (!api.staticFallback) {
     return false;
   }
-  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, []);
+  const existing = readStorage<GitHubProject[]>(GITHUB_KEY, DEFAULT_GITHUB_PROJECTS);
   writeStorage(
     GITHUB_KEY,
     existing.filter((item) => item.id !== id),
