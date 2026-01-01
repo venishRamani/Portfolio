@@ -22,18 +22,18 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: 'project-1',
     index: '01',
-    title: 'Designing the future of full-stack workspaces',
+    title: 'Designing the CampIndia Website',
     subtitle: 'Kinetix Cloud Console · React + Node.js API Platform',
     description:
-      'Designed and built a full-stack web workspace for real-time API monitoring, deployment logs, and role-based project controls with sub-40ms query latency.',
+       'your gateway to exploring the beauty and diversity of India camping destinations!',
     architectureSummary:
-      'Built on a modular React 19 + TypeScript client communicating with an Express REST gateway, PostgreSQL connection pooling, and Redis-backed session caching.',
+      'Foster a community of outdoor enthusiasts who love exploring India's wilderness.',
     highlights: [
-      'Modular React dashboard with keyboard-first command routing and live filter tables',
-      'Express REST endpoints with schema validation, rate limiting, and structured error envelopes',
-      'Reduced dashboard bundle weight by 38% via route-level splitting and virtualized log lists',
+      'Camping Spot Directory: A curated list of camping sites across India, complete with location details, amenities, and user reviews.',
+      'Travel Guides: Step-by-step guides for planning your camping trips, including packing lists, safety tips, and must-visit attractions.',
+      'Community Contributions: Open to contributions from fellow campers! Share your experiences, photos, and tips to help others.',
     ],
-    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Tailwind CSS'],
+    stack: ['HTMl', 'TypeScript', 'CSS', 'JAVASCRIPT'],
     deviceVariant: 'laptop',
     align: 'left',
     screenTexture: resolveAssetUrl('src/assets/images/work_fintech_platform_1795082546240.jpg'),
